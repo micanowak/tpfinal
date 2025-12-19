@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Involucrate</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="modo-claro">
+  <header class="encabezado">
+    <div class="logo-ong">
+      <picture>
+        <source srcset="img/logo.png" type="image/png">
+        <img src="img/logo.png" alt="Logo Patitas en Red" loading="lazy">
+      </picture>
+    </div>
+    <nav class="menu" id="menu">
+      <a href="index.html">Inicio</a>
+      <a href="nosotros.html">Nosotros</a>
+      <a href="proyectos.html">Proyectos</a>
+      <a href="involucrate.html">Involucrate</a>
+      <a href="app.html">Aplicación</a>
+      <a href="contacto.html">Contacto</a>
+    </nav>
+    <div class="acciones-encabezado">
+      <button class="boton-texto" id="btnTema" aria-label="Cambiar modo de color">Modo noche</button>
+      <a class="boton-primario" href="contacto.html">Donar ahora</a>
+      <button class="btn-burger" id="btnBurger" aria-label="Abrir menú">☰</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="seccion">
+      <div class="seccion-cabecera">
+        <h2>Formas simples de ayudar</h2>
+        <p class="bajada">Te guiamos para que aportes tiempo, difusión o recursos. Vos elegís.</p>
+      </div>
+      <div class="grid-dos">
+        <article class="tarjeta">
+          <h3>Voluntariado express</h3>
+          <p>Anotate para traslados, guardias o difusión digital. Guardamos tu elección en tu compu así ya queda.</p>
+          <form class="form-voluntariado" id="formVoluntariado">
+            <input type="text" name="nombre" placeholder="Tu nombre" required>
+            <select name="rol" required>
+              <option value="">¿Cómo te copa ayudar?</option>
+              <option value="traslados">Traslados y logística</option>
+              <option value="difusion">Difusión en redes</option>
+              <option value="hogar">Hogar de tránsito</option>
+              <option value="eventos">Ferias y eventos</option>
+            </select>
+            <button type="submit" class="boton-primario">Guardar mi rol</button>
+            <p class="mensaje" id="mensajeVoluntariado"></p>
+          </form>
+        </article>
+        <article class="tarjeta">
+          <h3>Transparencia en serio</h3>
+          <ul class="lista-pasos">
+            <li>Reportes mensuales abiertos.</li>
+            <li>Seguimiento en vivo de casos críticos.</li>
+            <li>Panel con fotos antes / después.</li>
+            <li>Mapeo de barrios donde actuamos.</li>
+          </ul>
+          <div class="cta-lateral">
+            <button class="boton-secundario" id="abrirModalTransparencia">Ver desglose rápido</button>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="seccion seccion-clara">
+      <div class="seccion-cabecera">
+        <p class="etiqueta">Preguntas rápidas</p>
+        <h2>FAQ para sacarte la intriga</h2>
+      </div>
+      <div class="acordeon" id="acordeon">
+        <button class="item-acordeon">¿Cómo verifican las adopciones?<span>+</span></button>
+        <div class="panel-acordeon">Visitamos el hogar, pedimos DNI, firmamos compromiso y hacemos seguimiento de 3
+          meses.</div>
+        <button class="item-acordeon">¿En qué barrios actuamos primero?<span>+</span></button>
+        <div class="panel-acordeon">Sur y centro de CABA y GBA: Barracas, Lanús, Banfield, San Telmo y Boedo.</div>
+        <button class="item-acordeon">¿Aceptan donaciones en especie?<span>+</span></button>
+        <div class="panel-acordeon">Sí: alimento, frazadas, jaulas, transportadoras y pipetas. Coordinamos retiro.</div>
+      </div>
+    </section>
+
+    <section class="seccion">
+      <div class="seccion-cabecera">
+        <p class="etiqueta">Planes de ayuda</p>
+        <h2>Elegí tu forma de aportar</h2>
+      </div>
+      <div class="grid-tres">
+        <article class="tarjeta">
+          <h3>Kit rescate</h3>
+          <p>$7.500 por mes. Cubre pipeta, antiparasitario y manta para un caso urgente.</p>
+        </article>
+        <article class="tarjeta">
+          <h3>Guardia vet</h3>
+          <p>$12.000 por mes. Fondo para castraciones y emergencias nocturnas.</p>
+        </article>
+        <article class="tarjeta">
+          <h3>Feria y adopciones</h3>
+          <p>$5.000 por mes. Impresiones, traslados y chapitas de identificación.</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="pie">
+    <div>
+      <strong>Patitas Alegres</strong>
+      <p>Derechos reservados</p>
+      <a class="boton-primario" href="contacto.html">Contactanos para más info</a>
+    </div>
+    <div class="pie-links">
+      <a href="index.html">Inicio</a>
+      <a href="nosotros.html">Nosotros</a>
+      <a href="proyectos.html">Proyectos</a>
+      <a href="involucrate.html">Sumate</a>
+      <a href="app.html">Juego</a>
+      <a href="contacto.html">Contacto</a>
+    </div>
+  </footer>
+
+  <div class="modal" id="modalTransparencia" aria-hidden="true">
+    <div class="modal-contenido">
+      <button class="cerrar" data-cerrar="modalTransparencia">×</button>
+      <h3>Desglose express</h3>
+      <ul class="lista-pasos">
+        <li>50% veterinaria y medicamentos.</li>
+        <li>20% alimento y kits de rescate.</li>
+        <li>15% traslados y combustible.</li>
+        <li>10% ferias y adopciones.</li>
+        <li>5% herramientas y mantenimiento.</li>
+      </ul>
+    </div>
+  </div>
+
+  <script>
+    const body = document.body;
+    const btnTema = document.getElementById('btnTema');
+    const nav = document.getElementById('menu');
+    const btnBurger = document.getElementById('btnBurger');
+    const formVoluntariado = document.getElementById('formVoluntariado');
+    const mensajeVoluntariado = document.getElementById('mensajeVoluntariado');
+    const acordeon = document.querySelectorAll('.item-acordeon');
+
+    const estadoTema = localStorage.getItem('tema');
+    if (estadoTema === 'oscuro') {
+      body.classList.add('modo-oscuro');
+      btnTema.textContent = 'Modo día';
+    }
+    btnTema.addEventListener('click', () => {
+      body.classList.toggle('modo-oscuro');
+      const tema = body.classList.contains('modo-oscuro') ? 'oscuro' : 'claro';
+      btnTema.textContent = tema === 'oscuro' ? 'Modo día' : 'Modo noche';
+      localStorage.setItem('tema', tema);
+    });
+    btnBurger.addEventListener('click', () => nav.classList.toggle('activo'));
+
+    const almacenado = JSON.parse(localStorage.getItem('voluntariado') || '{}');
+    if (almacenado.nombre) {
+      formVoluntariado.nombre.value = almacenado.nombre;
+      formVoluntariado.rol.value = almacenado.rol;
+      mensajeVoluntariado.textContent = "Guardamos tu preferencia: " + almacenado.rol;
+    }
+    formVoluntariado.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const data = { nombre: formVoluntariado.nombre.value, rol: formVoluntariado.rol.value };
+      localStorage.setItem('voluntariado', JSON.stringify(data));
+      mensajeVoluntariado.textContent = "¡Listo " + data.nombre + "! Te agendamos para " + data.rol + ".";
+    });
+
+    document.getElementById('abrirModalTransparencia').addEventListener('click', () => visorModal(true));
+    document.querySelectorAll('[data-cerrar]').forEach(btn => btn.addEventListener('click', () => visorModal(false)));
+    document.getElementById('modalTransparencia').addEventListener('click', (e) => {
+      if (e.target.id === 'modalTransparencia') visorModal(false);
+    });
+    const visorModal = (abrir = true) => {
+      const modal = document.getElementById('modalTransparencia');
+      modal.setAttribute('aria-hidden', abrir ? 'false' : 'true');
+      modal.classList.toggle('visible', abrir);
+    };
+
+    acordeon.forEach(btn => {
+      btn.addEventListener('click', () => {
+        btn.classList.toggle('abierto');
+        btn.nextElementSibling.classList.toggle('visible');
+      });
+    });
+  </script>
+</body>
+
+</html>

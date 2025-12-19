@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nosotros</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="modo-claro">
+  <header class="encabezado">
+    <div class="logo-ong">
+      <picture>
+        <source srcset="img/logo.png" type="image/png">
+        <img src="img/logo.png" alt="Logo Patitas en Red" loading="lazy">
+      </picture>
+    </div>
+    <nav class="menu" id="menu">
+      <a href="index.html">Inicio</a>
+      <a href="nosotros.html">Nosotros</a>
+      <a href="proyectos.html">Proyectos</a>
+      <a href="involucrate.html">Involucrate</a>
+      <a href="app.html">Aplicación</a>
+      <a href="contacto.html">Contacto</a>
+    </nav>
+    <div class="acciones-encabezado">
+      <button class="boton-texto" id="btnTema" aria-label="Cambiar modo de color">Modo noche</button>
+      <a class="boton-primario" href="contacto.html">Donar ahora</a>
+      <button class="btn-burger" id="btnBurger" aria-label="Abrir menú">☰</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="seccion seccion-nosotros-hero">
+      <div class="seccion-cabecera">
+        <p class="etiqueta">Quienes somos</p>
+        <h2>Historia corta, compromiso largo</h2>
+        <p class="bajada">Nacimos en 2021 en el conurbano sur. Entre mates, rescates y posteos, armamos una red que hoy
+          sostiene campanas, ferias y alianzas.</p>
+      </div>
+      <div class="grid-dos">
+        <article class="tarjeta">
+          <h3>Mision</h3>
+          <p>Salvar, sanar y reubicar animales en hogares seguros. Educamos para prevenir el abandono y trabajamos con
+            barrios populares para que todas las patitas tengan plan.</p>
+          <h3>Vision</h3>
+          <p>Una ciudad donde el cuidado animal sea cultura cotidiana. Queremos que cada rescate active una cadena de
+            impacto positivo.</p>
+          <ul class="lista-pasos">
+            <li><strong>2021:</strong> Primer refugio casero en Banfield.</li>
+            <li><strong>2022:</strong> Clinica movil con veterinarias amigas.</li>
+            <li><strong>2023:</strong> Plataforma de adopciones verificadas.</li>
+            <li><strong>2025:</strong> Programa “Barrios Pet Friendly”.</li>
+          </ul>
+        </article>
+        <article class="tarjeta video">
+          <h3>Documental de 1 minuto</h3>
+          <div class="video-resp">
+            <iframe src="https://www.youtube.com/embed/iT6neLPnW2M" title="Video Patitas en Red"
+              allowfullscreen></iframe>
+          </div>
+          <p>Vivimos la calle, los traslados y las adopciones. Todo esta documentado para que el apoyo tenga rostro
+            real.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="seccion seccion-equipo">
+      <div class="seccion-cabecera">
+        <p class="etiqueta">Equipo</p>
+        <h2>Personas detras de las patitas</h2>
+      </div>
+      <div class="grid-tres">
+        <article class="tarjeta">
+          <h3>Rocío (fundadora)</h3>
+          <p>Coordinacion de rescates, alianzas con veterinarias y compras de insumos.</p>
+        </article>
+        <article class="tarjeta">
+          <h3>Mateo (comunidad)</h3>
+          <p>Redes, voluntariado y ferias de adopcion. Siempre con la camara lista.</p>
+        </article>
+        <article class="tarjeta">
+          <h3>Brisa (seguimiento)</h3>
+          <p>Agenda a las familias, controla papeles y asegura que cada patita este cuidada.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="seccion seccion-valores">
+      <div class="seccion-cabecera">
+        <p class="etiqueta">Como trabajamos</p>
+        <h2>Valores y rituales de la red</h2>
+      </div>
+      <div class="grid-dos">
+        <article class="tarjeta">
+          <h3>Valores</h3>
+          <ul class="lista-pasos">
+            <li>Transparencia con datos abiertos y recibos.</li>
+            <li>Respeto: tratamos a cada animal como familia.</li>
+            <li>Velocidad: respuesta maxima 2 horas en casos criticos.</li>
+            <li>Seguimiento: adopciones con controles reales.</li>
+          </ul>
+        </article>
+        <article class="tarjeta">
+          <h3>Rituales</h3>
+          <ul class="lista-pasos">
+            <li>Daily de casos urgentes a las 9 AM.</li>
+            <li>Reunion semanal con voluntariado.</li>
+            <li>Stream mensual de rendicion de gastos.</li>
+            <li>Feria abierta el primer sabado de cada mes.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="pie">
+    <div>
+      <strong>Patitas Alegres</strong>
+      <p>Derechos reservados</p>
+      <a class="boton-primario" href="contacto.html">Contactanos para más info</a>
+    </div>
+    <div class="pie-links">
+      <a href="index.html">Inicio</a>
+      <a href="nosotros.html">Nosotros</a>
+      <a href="proyectos.html">Proyectos</a>
+      <a href="involucrate.html">Sumate</a>
+      <a href="app.html">Juego</a>
+      <a href="contacto.html">Contacto</a>
+    </div>
+  </footer>
+
+  <script>
+    const body = document.body;
+    const btnTema = document.getElementById('btnTema');
+    const nav = document.getElementById('menu');
+    const btnBurger = document.getElementById('btnBurger');
+    const estadoTema = localStorage.getItem('tema');
+    if (estadoTema === 'oscuro') {
+      body.classList.add('modo-oscuro');
+      btnTema.textContent = 'Modo día';
+    }
+    btnTema.addEventListener('click', () => {
+      body.classList.toggle('modo-oscuro');
+      const tema = body.classList.contains('modo-oscuro') ? 'oscuro' : 'claro';
+      btnTema.textContent = tema === 'oscuro' ? 'Modo día' : 'Modo noche';
+      localStorage.setItem('tema', tema);
+    });
+    btnBurger.addEventListener('click', () => nav.classList.toggle('activo'));
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,264 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Proyectos</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="modo-claro">
+  <header class="encabezado">
+    <div class="logo-ong">
+      <picture>
+        <source srcset="img/logo.png" type="image/png">
+        <img src="img/logo.png" alt="Logo Patitas en Red" loading="lazy">
+      </picture>
+    </div>
+    <nav class="menu" id="menu">
+      <a href="index.html">Inicio</a>
+      <a href="nosotros.html">Nosotros</a>
+      <a href="proyectos.html">Proyectos</a>
+      <a href="involucrate.html">Involucrate</a>
+      <a href="app.html">Aplicación</a>
+      <a href="contacto.html">Contacto</a>
+    </nav>
+    <div class="acciones-encabezado">
+      <button class="boton-texto" id="btnTema" aria-label="Cambiar modo de color">Modo noche</button>
+      <a class="boton-primario" href="contacto.html">Donar ahora</a>
+      <button class="btn-burger" id="btnBurger" aria-label="Abrir menú">☰</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="seccion">
+      <div class="seccion-cabecera">
+        <h2>Nuestros proyectos más firmes­</h2>
+        <p class="bajada">Filtralos por barrio o tipo.</p>
+      </div>
+      <div class="filtros">
+        <input type="search" id="buscadorProyectos" placeholder="Buscar por nombre, barrio o idea...">
+        <div class="chips">
+          <button class="boton-chip activa" data-filtro="todos">Todos</button>
+          <button class="boton-chip" data-filtro="salud">Salud</button>
+          <button class="boton-chip" data-filtro="educacion">Educación</button>
+          <button class="boton-chip" data-filtro="social">Desarrollo social</button>
+        </div>
+      </div>
+      <div class="grid-tres" id="listaProyectos">
+        <article class="tarjeta proyecto" data-categoria="salud" data-barrio="Barracas">
+          <div class="proyecto-body">
+            <h3>Clínica móvil veterinaria</h3>
+            <p>Vacunación, castración y chequeos gratuitos en Barracas y Pompeya.</p>
+          </div>
+          <div class="proyecto-footer">
+            <div class="pill">Salud</div>
+            <button class="boton-secundario btn-modal" data-proyecto="Ronda Vet">Ver detalle</button>
+          </div>
+        </article>
+        <article class="tarjeta proyecto" data-categoria="educacion" data-barrio="LanÃºs">
+          <div class="proyecto-body">
+            <h3>Escuelita Pet Friendly</h3>
+            <p>Talleres express en secundarias: convivencia, adopción responsable y primeros auxilios.</p>
+          </div>
+          <div class="proyecto-footer">
+            <div class="pill">Educación</div>
+            <button class="boton-secundario btn-modal" data-proyecto="Escuelita">Ver detalle</button>
+          </div>
+        </article>
+        <article class="tarjeta proyecto" data-categoria="social" data-barrio="San Telmo">
+          <div class="proyecto-body">
+            <h3>Kits de rescate 24/7</h3>
+            <p>Mantas, antipulgas y alimento para rescatistas vecinales con acompañamiento.</p>
+          </div>
+          <div class="proyecto-footer">
+            <div class="pill">Desarrollo social</div>
+            <button class="boton-secundario btn-modal" data-proyecto="Kits">Ver detalle</button>
+          </div>
+        </article>
+      </div>
+      <div class="grid-tres">
+        <article class="tarjeta proyecto" data-categoria="salud" data-barrio="Mataderos">
+          <div class="proyecto-body">
+            <h3>Operativo vet en Mataderos</h3>
+            <p>Jornadas de vacunacion y castracion con turnos previos y fichas digitales.</p>
+          </div>
+          <div class="proyecto-footer">
+            <div class="pill">Salud</div>
+            <button class="boton-secundario btn-modal" data-proyecto="Mataderos">Ver detalle</button>
+          </div>
+        </article>
+        <article class="tarjeta proyecto" data-categoria="educacion" data-barrio="La Boca">
+          <div class="proyecto-body">
+            <h3>Club de adopcion La Boca</h3>
+            <p>Encuentros con familias, charlas y match de animales rescatados en la ribera.</p>
+          </div>
+          <div class="proyecto-footer">
+            <div class="pill">Educacion</div>
+            <button class="boton-secundario btn-modal" data-proyecto="La Boca">Ver detalle</button>
+          </div>
+        </article>
+        <article class="tarjeta proyecto" data-categoria="social" data-barrio="Once">
+          <div class="proyecto-body">
+            <h3>Guardia de transito pet</h3>
+            <p>Traslados en taxi pet y contencion para rescates nocturnos en Once y alrededores.</p>
+          </div>
+          <div class="proyecto-footer">
+            <div class="pill">Desarrollo social</div>
+            <button class="boton-secundario btn-modal" data-proyecto="Guardia">Ver detalle</button>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="seccion seccion-clara">
+      <div class="seccion-cabecera">
+        <h2>Cómo medimos el impacto</h2>
+        <p class="bajada">Cada proyecto se audita y se comparte con la comunidad.</p>
+      </div>
+      <div class="grid-dos">
+        <article class="tarjeta">
+          <h3>Checklist operativo</h3>
+          <ul class="lista-pasos">
+            <li>Relevamiento barrial y mapeo de aliados.</li>
+            <li>Objetivos mensuales con KPIs claros.</li>
+            <li>Dashboard público con avances y fotos.</li>
+            <li>Encuestas de satisfacción a adoptantes.</li>
+          </ul>
+        </article>
+        <article class="tarjeta">
+          <h3>Aliadas y herramientas</h3>
+          <p>Veterinarias voluntarias, rescatistas vecinales, base de datos propia y reportes compartidos por Drive.
+            Cada gasto tiene comprobante.</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="pie">
+    <div>
+      <strong>Patitas Alegres</strong>
+      <p>Derechos reservados</p>
+      <a class="boton-primario" href="contacto.html">Contactanos para más info</a>
+    </div>
+    <div class="pie-links">
+      <a href="index.html">Inicio</a>
+      <a href="nosotros.html">Nosotros</a>
+      <a href="proyectos.html">Proyectos</a>
+      <a href="involucrate.html">Sumate</a>
+      <a href="app.html">Juego</a>
+      <a href="contacto.html">Contacto</a>
+    </div>
+  </footer>
+
+  <div class="modal" id="modalProyecto" aria-hidden="true">
+    <div class="modal-contenido">
+      <button class="cerrar" data-cerrar="modalProyecto">x</button>
+      <div id="detalleProyecto"></div>
+    </div>
+  </div>
+
+  <script>
+    const body = document.body;
+    const btnTema = document.getElementById('btnTema');
+    const nav = document.getElementById('menu');
+    const btnBurger = document.getElementById('btnBurger');
+    const buscador = document.getElementById('buscadorProyectos');
+    const chips = document.querySelectorAll('.chips .boton-chip');
+    const items = document.querySelectorAll('.proyecto');
+    const datos = document.querySelectorAll('.impacto .dato');
+    let filtroActivo = 'todos';
+
+    const estadoTema = localStorage.getItem('tema');
+    if (estadoTema === 'oscuro') {
+      body.classList.add('modo-oscuro');
+      btnTema.textContent = 'Modo dia';
+    }
+    btnTema.addEventListener('click', () => {
+      body.classList.toggle('modo-oscuro');
+      const tema = body.classList.contains('modo-oscuro') ? 'oscuro' : 'claro';
+      btnTema.textContent = tema === 'oscuro' ? 'Modo dia' : 'Modo noche';
+      localStorage.setItem('tema', tema);
+    });
+    btnBurger.addEventListener('click', () => nav.classList.toggle('activo'));
+
+    const proyectos = {
+      "Ronda Vet": "<picture class='modal-img'><source srcset='img/clinica.png' type='image/png'><img class='modal-img' src='img/clinica.png' alt='Operativo vet'></picture><h3>Clinica movil Ronda Vet</h3><p>Operativos mensuales en Barracas, Pompeya y Boedo con veterinarias voluntarias.</p><ul class='lista-pasos'><li>Meta mensual: 80 atenciones entre castraciones, vacunas y antipulgas.</li><li>Equipo de 3 vets + 8 voluntarias de soporte logístico.</li><li>Registro de historias clinicas digital y recordatorios por mail.</li><li>Articulacion con centros barriales para prestamo de espacio.</li></ul><p>Financiacion: donaciones recurrentes y sponsors de insumos.</p>",
+      "Escuelita": "<picture class='modal-img'><source srcset='img/charla.png' type='image/png'><img class='modal-img' src='img/charla.png' alt='Escuelita Pet Friendly'></picture><h3>Escuelita Pet Friendly</h3><p>Charlas en colegios y clubes barriales. Kit con afiches, guias y dinamicas.</p><ul class='lista-pasos'><li>3 modulos de 40 minutos: convivencia, adopcion responsable y primeros auxilios.</li><li>Material descargable con QR y ficha para docentes.</li><li>Participacion de familias en mesas de adopcion supervisadas.</li><li>Medicion: encuestas pre y post charla + seguimiento de adopciones.</li></ul><p>Aliadas: docentes locales, centros culturales y voluntariado juvenil.</p>",
+      "Kits": "<picture class='modal-img'><source srcset='img/247.png' type='image/png'><img class='modal-img' src='img/247.png' alt='Kits de rescate'></picture><h3>Kits de rescate 24/7</h3><p>Entrega de kits a rescatistas vecinales con seguimiento.</p><ul class='lista-pasos'><li>Contenido: manta termica, collar, correa, pipeta, alimento y checklist.</li><li>Contacto directo con vet aliada y canal de emergencias 24/7.</li><li>Retiro semanal de kits usados y reposicion bajo reporte.</li><li>Base de datos con trazabilidad por rescatista y barrio.</li></ul><p>Impacto esperado: 60 kits activos con rotacion quincenal.</p>",
+      "Mataderos": "<picture class='modal-img'><source srcset='img/vet.png' type='image/png'><img class='modal-img' src='img/vet.png' alt='Operativo Mataderos'></picture><h3>Operativo vet en Mataderos</h3><p>Jornadas de vacunacion y castracion con turnos previos.</p><ul class='lista-pasos'><li>3 medicas veterinarias voluntarias por fecha y 2 quirófanos móviles.</li><li>Fichas digitales, plan de vacunas y desparasitacion completa.</li><li>Logistica con referentes barriales para priorizar urgencias.</li><li>Follow-up a 30 dias para reforzar antiparasitarios.</li></ul><p>Meta: 120 atenciones por jornada, con prioridad a casos de calle.</p>",
+      "La Boca": "<picture class='modal-img'><source srcset='img/boca.png' type='image/png'><img class='modal-img' src='img/boca.png' alt='Club de adopcion La Boca'></picture><h3>Club de adopcion La Boca</h3><p>Encuentros mensuales con familias y rescatistas.</p><ul class='lista-pasos'><li>Charlas de convivencia y adopcion responsable.</li><li>Match guiado y seguimiento 90 dias por voluntarias asignadas.</li><li>Placas con datos y kit de bienvenida para cada adopcion.</li><li>Espacio kids con juegos y educacion temprana.</li></ul><p>Registro de compromisos firmados y visitas sorpresa al mes.</p>",
+      "Guardia": "<picture class='modal-img'><source srcset='img/taxi.png' type='image/png'><img class='modal-img' src='img/taxi.png' alt='Guardia de transito pet'></picture><h3>Guardia de transito pet</h3><p>Traslados en taxi pet y contencion para rescates nocturnos.</p><ul class='lista-pasos'><li>Disponibilidad 24/7 en Once y alrededores.</li><li>Kit de emergencia en cada viaje: bozal, manta, gasas, suero oral.</li><li>Derivacion inmediata a vet aliada y coord de hogar transitorio.</li><li>Protocolo de seguridad y checklist post traslado.</li></ul><p>Objetivo: 25 traslados/semana con respuesta menor a 30 minutos.</p>"
+    };
+
+    document.querySelectorAll('.btn-modal').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const key = btn.dataset.proyecto;
+        document.getElementById('detalleProyecto').innerHTML = proyectos[key] || '';
+        visorModal(true);
+      });
+    });
+
+    const visorModal = (abrir = true) => {
+      const modal = document.getElementById('modalProyecto');
+      modal.setAttribute('aria-hidden', abrir ? 'false' : 'true');
+      modal.classList.toggle('visible', abrir);
+    };
+
+    document.querySelectorAll('[data-cerrar]').forEach(btn => {
+      btn.addEventListener('click', () => visorModal(false));
+    });
+    document.getElementById('modalProyecto').addEventListener('click', (e) => {
+      if (e.target.id === 'modalProyecto') visorModal(false);
+    });
+
+    const filtrar = () => {
+      const texto = buscador.value.toLowerCase();
+      items.forEach(item => {
+        const coincideCat = filtroActivo === 'todos' || item.dataset.categoria === filtroActivo;
+        const coincideTexto = item.textContent.toLowerCase().includes(texto) || item.dataset.barrio.toLowerCase().includes(texto);
+        item.style.display = (coincideCat && coincideTexto) ? 'flex' : 'none';
+      });
+    };
+    buscador.addEventListener('input', filtrar);
+    chips.forEach(chip => chip.addEventListener('click', () => {
+      chips.forEach(c => c.classList.remove('activa'));
+      chip.classList.add('activa');
+      filtroActivo = chip.dataset.filtro;
+      filtrar();
+    }));
+
+    const contadores = () => {
+      datos.forEach(dato => {
+        const objetivo = Number(dato.dataset.objetivo);
+        let actual = 0;
+        const paso = Math.ceil(objetivo / 40);
+        const intervalo = setInterval(() => {
+          actual += paso;
+          if (actual >= objetivo) {
+            actual = objetivo;
+            clearInterval(intervalo);
+          }
+          dato.textContent = actual;
+        }, 40);
+      });
+    };
+    const observador = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          contadores();
+          observador.disconnect();
+        }
+      });
+    }, { threshold: 0.2 });
+    observador.observe(document.querySelector('.impacto'));
+  </script>
+</body>
+
+</html>

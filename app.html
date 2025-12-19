@@ -1,0 +1,283 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aplicacion Javascript</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="juego/styles.css">
+</head>
+
+<body class="modo-claro">
+  <header class="encabezado">
+    <div class="logo-ong">
+      <picture>
+        <source srcset="img/logo.png" type="image/png">
+        <img src="img/logo.png" alt="Logo Patitas en Red" loading="lazy">
+      </picture>
+    </div>
+    <nav class="menu" id="menu">
+      <a href="index.html">Inicio</a>
+      <a href="nosotros.html">Nosotros</a>
+      <a href="proyectos.html">Proyectos</a>
+      <a href="involucrate.html">Involucrate</a>
+      <a href="app.html">Aplicacion</a>
+      <a href="contacto.html">Contacto</a>
+    </nav>
+    <div class="acciones-encabezado">
+      <button class="boton-texto" id="btnTema" aria-label="Cambiar modo de color">Modo noche</button>
+      <a class="boton-primario" href="contacto.html">Donar ahora</a>
+      <button class="btn-burger" id="btnBurger" aria-label="Abrir menu">☰</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="seccion">
+      <div class="seccion-cabecera">
+        <h2>Memotest Patitas Alegres</h2>
+        <p class="bajada">Juga directo aca sin abrir otra pestana. Es el mismo juego educativo sobre acciones
+          solidarias.</p>
+      </div>
+      <div class="marco">
+        <section class="panel-info">
+          <p class="etiqueta">Juego de memoria</p>
+          <h1>Memotest <span>Patitas Alegres</span></h1>
+          <p class="bajada">Dale vuelta a las cartas y descubre acciones solidarias para el cuidado de animales.
+            Encontra todas las parejas.</p>
+          <div class="stats">
+            <div><small>Parejas</small><strong id="contadorPares">0 / 8</strong></div>
+            <div><small>Movimientos</small><strong id="contadorMovs">0</strong></div>
+            <div><small>Tiempo</small><strong id="contadorTiempo">00:00</strong></div>
+          </div>
+          <div class="acciones">
+            <button class="btn-accion" id="btnEmpezar">Empezar</button>
+            <button class="btn-accion btn-suave" id="btnReiniciar">Reiniciar</button>
+          </div>
+          <div class="mejor-marca">
+            <p>Mejor tiempo guardado</p>
+            <strong id="mejorTiempo">--</strong>
+          </div>
+          <div class="tips">
+            <h3>Cartas que te van a tocar</h3>
+            <ul>
+              <li>Castrar y vacunar con vet aliada.</li>
+              <li>Donar alimento y mantas.</li>
+              <li>Ser hogar de transito.</li>
+              <li>Adoptar con seguimiento.</li>
+              <li>Difundir casos en redes.</li>
+              <li>Voluntariado en ferias.</li>
+              <li>Colocar chapita con datos.</li>
+              <li>Traslados seguros en taxi pet.</li>
+            </ul>
+          </div>
+        </section>
+
+        <section class="panel-tablero">
+          <header class="tablero-top">
+            <div class="parejas">Parejas: <span id="contadorHeader">0</span> / 8</div>
+          </header>
+          <div class="tablero" id="tablero"></div>
+          <div class="alerta" id="alertaFinal">
+            <h3>Ganaste!</h3>
+            <p id="mensajeFinal"></p>
+            <button id="btnOtra" class="btn-accion">Otra ronda</button>
+          </div>
+        </section>
+      </div>
+    </section>
+  </main>
+
+  <footer class="pie">
+    <div>
+      <strong>Patitas Alegres</strong>
+      <p>Derechos reservados</p>
+      <a class="boton-primario" href="contacto.html">Contactanos para más info</a>
+    </div>
+    <div class="pie-links">
+      <a href="index.html">Inicio</a>
+      <a href="nosotros.html">Nosotros</a>
+      <a href="proyectos.html">Proyectos</a>
+      <a href="involucrate.html">Sumate</a>
+      <a href="app.html">Juego</a>
+      <a href="contacto.html">Contacto</a>
+    </div>
+  </footer>
+
+  <script>
+    const body = document.body;
+    const btnTema = document.getElementById('btnTema');
+    const nav = document.getElementById('menu');
+    const btnBurger = document.getElementById('btnBurger');
+    const estadoTema = localStorage.getItem('tema');
+    if (estadoTema === 'oscuro') {
+      body.classList.add('modo-oscuro');
+      btnTema.textContent = 'Modo dia';
+    }
+    btnTema.addEventListener('click', () => {
+      body.classList.toggle('modo-oscuro');
+      const tema = body.classList.contains('modo-oscuro') ? 'oscuro' : 'claro';
+      btnTema.textContent = tema === 'oscuro' ? 'Modo dia' : 'Modo noche';
+      localStorage.setItem('tema', tema);
+    });
+    btnBurger.addEventListener('click', () => nav.classList.toggle('activo'));
+
+    // Juego
+    const actividades = [
+      { titulo: "Castrar y vacunar", color: "#ffe0e0", detalle: "Jornada con vet aliada para cortar el abandono." },
+      { titulo: "Donar alimento y mantas", color: "#dff1ff", detalle: "Sostener refugios barriales con insumos basicos." },
+      { titulo: "Hogar de transito", color: "#ffeccb", detalle: "Cuidar temporal hasta la adopcion responsable." },
+      { titulo: "Adopcion responsable", color: "#ffe0ef", detalle: "Firmar compromiso, seguimiento y chapita con datos." },
+      { titulo: "Difundir en redes", color: "#e5e4ff", detalle: "Historias, reels y placas que llegan a nuevas familias." },
+      { titulo: "Voluntariado en ferias", color: "#dff7ef", detalle: "Armar stands, charlar y filtrar adoptantes." },
+      { titulo: "Chapita y collar", color: "#fff4d6", detalle: "Identificacion rapida para evitar perdidas." },
+      { titulo: "Traslados seguros", color: "#e9f0ff", detalle: "Taxi pet y jaula para mover rescates sin estres." }
+    ];
+
+    const tablero = document.getElementById('tablero');
+    const contadorPares = document.getElementById('contadorPares');
+    const contadorHeader = document.getElementById('contadorHeader');
+    const contadorMovs = document.getElementById('contadorMovs');
+    const contadorTiempo = document.getElementById('contadorTiempo');
+    const btnEmpezar = document.getElementById('btnEmpezar');
+    const btnReiniciar = document.getElementById('btnReiniciar');
+    const alertaFinal = document.getElementById('alertaFinal');
+    const mensajeFinal = document.getElementById('mensajeFinal');
+    const btnOtra = document.getElementById('btnOtra');
+    const mejorTiempo = document.getElementById('mejorTiempo');
+
+    let baraja = [];
+    let seleccion = [];
+    let bloqueado = false;
+    let paresEncontrados = 0;
+    let movimientos = 0;
+    let cronometro = null;
+    let segundos = 0;
+
+    const formatoTiempo = (s) => {
+      const m = Math.floor(s / 60).toString().padStart(2, '0');
+      const ss = (s % 60).toString().padStart(2, '0');
+      return `${m}:${ss}`;
+    };
+
+    const leerMejor = () => {
+      const guardado = localStorage.getItem('mejorMemotest');
+      if (guardado) mejorTiempo.textContent = guardado;
+    };
+
+    const mezclar = (arr) => [...arr].sort(() => Math.random() - 0.5);
+
+    const prepararBaraja = () => {
+      const repetidas = actividades.flatMap((act, idx) => ([
+        { ...act, id: `${idx}-a`, pareja: idx },
+        { ...act, id: `${idx}-b`, pareja: idx }
+      ]));
+      baraja = mezclar(repetidas);
+      tablero.innerHTML = '';
+      baraja.forEach(carta => {
+        const div = document.createElement('button');
+        div.className = 'carta';
+        div.dataset.id = carta.id;
+        div.dataset.pareja = carta.pareja;
+        div.style.backgroundColor = '#e6f5ff';
+        div.innerHTML = `<picture><source srcset="img/huella.png" type="image/svg+xml"><img class="huella-img" src="img/huella.png" alt="huella"></picture>`;
+        div.addEventListener('click', () => destapar(div, carta));
+        tablero.appendChild(div);
+      });
+    };
+
+    const actualizarUI = () => {
+      contadorPares.textContent = `${paresEncontrados} / 8`;
+      contadorHeader.textContent = paresEncontrados;
+      contadorMovs.textContent = movimientos;
+      contadorTiempo.textContent = formatoTiempo(segundos);
+    };
+
+    const iniciarTiempo = () => {
+      if (cronometro) clearInterval(cronometro);
+      cronometro = setInterval(() => {
+        segundos += 1;
+        contadorTiempo.textContent = formatoTiempo(segundos);
+      }, 1000);
+    };
+
+    const destapar = (el, carta) => {
+      if (bloqueado || el.classList.contains('adivinada') || el.classList.contains('activa')) return;
+      if (!cronometro) iniciarTiempo();
+      el.classList.add('activa');
+      el.style.backgroundColor = carta.color;
+      el.innerHTML = `<div class="contenido-carta"><p>${carta.titulo}</p><small>${carta.detalle}</small></div>`;
+      seleccion.push({ el, carta });
+      if (seleccion.length === 2) evaluar();
+    };
+
+    const evaluar = () => {
+      bloqueado = true;
+      movimientos += 1;
+      actualizarUI();
+      const [c1, c2] = seleccion;
+      if (c1.carta.pareja === c2.carta.pareja) {
+        c1.el.classList.add('adivinada');
+        c2.el.classList.add('adivinada');
+        paresEncontrados += 1;
+        seleccion = [];
+        bloqueado = false;
+        if (paresEncontrados === actividades.length) ganar();
+      } else {
+        setTimeout(() => {
+          c1.el.classList.remove('activa');
+          c2.el.classList.remove('activa');
+          c1.el.style.backgroundColor = '#e6f5ff';
+          c2.el.style.backgroundColor = '#e6f5ff';
+          c1.el.innerHTML = '<picture><source srcset="juego/img/huella.svg" type="image/svg+xml"><img class="huella-img" src="juego/img/huella.svg" alt="huella"></picture>';
+          c2.el.innerHTML = '<picture><source srcset="juego/img/huella.svg" type="image/svg+xml"><img class="huella-img" src="juego/img/huella.svg" alt="huella"></picture>';
+          seleccion = [];
+          bloqueado = false;
+        }, 900);
+      }
+    };
+
+    const ganar = () => {
+      clearInterval(cronometro);
+      cronometro = null;
+      const resumen = actividades.map(a => `• ${a.titulo}: ${a.detalle}`).join('<br>');
+      mensajeFinal.innerHTML = `Encontraste las 8 parejas en ${formatoTiempo(segundos)} con ${movimientos} movimientos.<br>${resumen}`;
+      alertaFinal.classList.add('visible');
+      const guardado = localStorage.getItem('mejorMemotest');
+      const guardadoSeg = guardado ? parseInt(guardado.split(':')[0], 10) * 60 + parseInt(guardado.split(':')[1], 10) : null;
+      if (!guardado || segundos < guardadoSeg) {
+        const nuevo = formatoTiempo(segundos);
+        localStorage.setItem('mejorMemotest', nuevo);
+        mejorTiempo.textContent = nuevo;
+      }
+    };
+
+    const reiniciar = () => {
+      paresEncontrados = 0;
+      movimientos = 0;
+      segundos = 0;
+      seleccion = [];
+      bloqueado = false;
+      clearInterval(cronometro);
+      cronometro = null;
+      alertaFinal.classList.remove('visible');
+      prepararBaraja();
+      actualizarUI();
+    };
+
+    btnEmpezar.addEventListener('click', reiniciar);
+    btnReiniciar.addEventListener('click', reiniciar);
+    btnOtra.addEventListener('click', reiniciar);
+
+    leerMejor();
+    prepararBaraja();
+    actualizarUI();
+  </script>
+</body>
+
+</html>

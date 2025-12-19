@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="modo-claro">
+  <div class="aviso-news" id="popup-news">
+    <div class="aviso-contenido">
+      <p class="etiqueta">Novedad</p>
+      <h3>Sumate a la lista de amigas de Patitas</h3>
+      <p>Historias reales y micro tips semanales. Gratis y sin spam.</p>
+      <form class="form-news" id="formNews">
+        <input type="email" name="email" placeholder="Tu mail" required>
+        <button type="submit" class="boton-primario">Recibir tips</button>
+      </form>
+      <button class="boton-texto" id="cerrarNews">No hoy, gracias</button>
+    </div>
+  </div>
+
+  <header class="encabezado">
+    <div class="logo-ong">
+      <picture>
+        <source srcset="img/logo.png" type="image/png">
+        <img src="img/logo.png" alt="Logo Patitas en Red" loading="lazy">
+      </picture>
+    </div>
+    <nav class="menu" id="menu">
+      <a href="index.html">Inicio</a>
+      <a href="nosotros.html">Nosotros</a>
+      <a href="proyectos.html">Proyectos</a>
+      <a href="involucrate.html">Involucrate</a>
+      <a href="app.html">Aplicación</a>
+      <a href="contacto.html">Contacto</a>
+    </nav>
+    <div class="acciones-encabezado">
+      <button class="boton-texto" id="btnTema" aria-label="Cambiar modo de color">Modo noche</button>
+      <a class="boton-primario" href="contacto.html">Donar ahora</a>
+      <button class="btn-burger" id="btnBurger" aria-label="Abrir menú">☰</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-texto">
+        <h1>Rescate, refugio y adopciones con comunidad real</h1>
+        <p class="bajada">Armamos puentes entre animales rescatados y familias copadas. Transparencia, impacto y cero chamuyo.</p>
+        <div class="hero-acciones">
+          <a class="boton-primario" href="involucrate.html">Sumate</a>
+          <a class="boton-chip" href="app.html">Jugar Memotest</a>
+        </div>
+        <div class="mini-datos">
+          <div><span>+320</span> adopciones cerradas</div>
+          <div><span>18</span> aliadas veterinarias</div>
+          <div><span>12k</span> voluntarias en red</div>
+        </div>
+      </div>
+      <div class="hero-media">
+        <div class="slider" id="sliderHero">
+          <div class="slide activa" style="background-image:url('img/rescate.png');">
+            <div class="slide-texto">Rescate exprés en Flores</div>
+          </div>
+          <div class="slide" style="background-image:url('img/barrial.png');">
+            <div class="slide-texto">Campaña de vacunación barrial</div>
+          </div>
+          <div class="slide" style="background-image:url('img/responsable.png');">
+            <div class="slide-texto">Adopciones responsables</div>
+          </div>
+        </div>
+        <div class="slider-controles" id="controlesHero" aria-label="Slider hero"></div>
+      </div>
+    </section>
+
+    <section class="seccion seccion-impacto">
+      <div class="seccion-cabecera">
+        <h2>Impacto en numeros</h2>
+        <p class="bajada">Lo que ya logramos con la red. Actualizamos estos datos cada mes y los abrimos a la comunidad.</p>
+      </div>
+      <div class="impacto">
+        <div class="impacto-item">
+          <div class="dato" data-objetivo="480">0</div>
+          <span>consultas veterinarias cubiertas</span>
+        </div>
+        <div class="impacto-item">
+          <div class="dato" data-objetivo="210">0</div>
+          <span>castraciones gestionadas</span>
+        </div>
+        <div class="impacto-item">
+          <div class="dato" data-objetivo="95">0</div>
+          <span>familias en seguimiento</span>
+        </div>
+        <div class="impacto-item">
+          <div class="dato" data-objetivo="320">0</div>
+          <span>adopciones cerradas</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="seccion seccion-clara video-acciones">
+      <div class="seccion-cabecera">
+        <h2>Mira nuestras acciones</h2>
+        <p class="bajada">Video con rescates, ferias y adopciones reales. Un repaso en 90 segundos de como trabajamos con la comunidad.</p>
+      </div>
+      <div class="video-resp">
+        <iframe src="https://www.youtube.com/embed/iT6neLPnW2M" title="Video acciones Patitas en Red" allowfullscreen></iframe>
+      </div>
+    </section>
+
+    <section class="seccion seccion-clara testimonios">
+      <div class="seccion-cabecera">
+        <h2>Experiencias de la red</h2>
+        <p class="bajada">Lo que cuentan familias, voluntarias y aliadas vet sobre trabajar con Patitas.</p>
+      </div>
+      <div class="grid-tres testimonios-grid">
+        <article class="tarjeta">
+          <div class="testimonio-header">
+            <div class="testimonio-avatar">MC</div>
+            <div>
+              <h3>Maru Casal</h3>
+              <p class="testimonio-rol">Adoptante feliz</p>
+            </div>
+          </div>
+          <p class="testimonio-texto">“Nos acompañaron en todo el proceso. Seguimiento, chapita y tips post adopción. Siento que no estamos solas.”</p>
+        </article>
+        <article class="tarjeta">
+          <div class="testimonio-header">
+            <div class="testimonio-avatar">RD</div>
+            <div>
+              <h3>Rafa Domínguez</h3>
+              <p class="testimonio-rol">Vet aliada</p>
+            </div>
+          </div>
+          <p class="testimonio-texto">“Planificamos castraciones comunitarias y vacunación. Siempre llegan con fichas clínicas y compromiso real.”</p>
+        </article>
+        <article class="tarjeta">
+          <div class="testimonio-header">
+            <div class="testimonio-avatar">LF</div>
+            <div>
+              <h3>Luz Fernández</h3>
+              <p class="testimonio-rol">Voluntaria</p>
+            </div>
+          </div>
+          <p class="testimonio-texto">“Empecé en ferias y ahora coordino traslados. Hay buena info, turnos claros y siempre priorizan a los animales.”</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="pie">
+    <div>
+      <strong>Patitas Alegres</strong>
+      <p>Derechos reservados</p>
+      <a class="boton-primario" href="contacto.html">Contactanos para más info</a>
+    </div>
+    <div class="pie-links">
+      <a href="index.html">Inicio</a>
+      <a href="nosotros.html">Nosotros</a>
+      <a href="proyectos.html">Proyectos</a>
+      <a href="involucrate.html">Sumate</a>
+      <a href="app.html">Juego</a>
+      <a href="contacto.html">Contacto</a>
+    </div>
+  </footer>
+
+  <div class="modal" id="modalVideo" aria-hidden="true">
+    <div class="modal-contenido">
+      <button class="cerrar" data-cerrar="modalVideo">×</button>
+      <div class="video-resp">
+        <iframe id="iframeModal" src="" title="Video ONG" allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const body = document.body;
+    const btnTema = document.getElementById('btnTema');
+    const nav = document.getElementById('menu');
+    const btnBurger = document.getElementById('btnBurger');
+    const slider = document.getElementById('sliderHero');
+    const controlesHero = document.getElementById('controlesHero');
+    const popupNews = document.getElementById('popup-news');
+    const cerrarNews = document.getElementById('cerrarNews');
+    const formNews = document.getElementById('formNews');
+
+    const estadoTema = localStorage.getItem('tema');
+    if (estadoTema === 'oscuro') {
+      body.classList.add('modo-oscuro');
+      btnTema.textContent = 'Modo día';
+    }
+
+    btnTema.addEventListener('click', () => {
+      body.classList.toggle('modo-oscuro');
+      const tema = body.classList.contains('modo-oscuro') ? 'oscuro' : 'claro';
+      btnTema.textContent = tema === 'oscuro' ? 'Modo día' : 'Modo noche';
+      localStorage.setItem('tema', tema);
+    });
+
+    btnBurger.addEventListener('click', () => nav.classList.toggle('activo'));
+
+    const slides = slider.querySelectorAll('.slide');
+    slides.forEach((_, i) => {
+      const btn = document.createElement('button');
+      btn.className = i === 0 ? 'activo' : '';
+      btn.addEventListener('click', () => moverSlide(i));
+      controlesHero.appendChild(btn);
+    });
+    let indiceSlide = 0;
+    const moverSlide = (i) => {
+      slides[indiceSlide].classList.remove('activa');
+      controlesHero.children[indiceSlide].classList.remove('activo');
+      indiceSlide = i;
+      slides[indiceSlide].classList.add('activa');
+      controlesHero.children[indiceSlide].classList.add('activo');
+    };
+    setInterval(() => moverSlide((indiceSlide + 1) % slides.length), 5000);
+
+    const visorModal = (abrir = true) => {
+      const modal = document.getElementById('modalVideo');
+      modal.setAttribute('aria-hidden', abrir ? 'false' : 'true');
+      modal.classList.toggle('visible', abrir);
+    };
+    document.querySelector('[data-cerrar="modalVideo"]').addEventListener('click', () => {
+      document.getElementById('iframeModal').src = '';
+      visorModal(false);
+    });
+    document.getElementById('modalVideo').addEventListener('click', (e) => {
+      if (e.target.id === 'modalVideo') {
+        document.getElementById('iframeModal').src = '';
+        visorModal(false);
+      }
+    });
+
+    const datos = document.querySelectorAll('.impacto .dato');
+    const contadores = () => {
+      datos.forEach(dato => {
+        const objetivo = Number(dato.dataset.objetivo);
+        let actual = 0;
+        const paso = Math.ceil(objetivo / 40);
+        const intervalo = setInterval(() => {
+          actual += paso;
+          if (actual >= objetivo) {
+            actual = objetivo;
+            clearInterval(intervalo);
+          }
+          dato.textContent = actual;
+        }, 40);
+      });
+    };
+    if (datos.length) {
+      const observador = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            contadores();
+            observador.disconnect();
+          }
+        });
+      }, { threshold: 0.3 });
+      observador.observe(document.querySelector('.impacto'));
+    }
+
+    setTimeout(() => {
+      if (!localStorage.getItem('newsOk')) popupNews.classList.add('visible');
+    }, 4000);
+    cerrarNews.addEventListener('click', () => popupNews.classList.remove('visible'));
+    formNews.addEventListener('submit', (e) => {
+      e.preventDefault();
+      localStorage.setItem('newsOk', 'true');
+      popupNews.classList.remove('visible');
+      alert('¡Te sumaste! Chequeá tu mail.');
+    });
+  </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
