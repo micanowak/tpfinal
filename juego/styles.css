@@ -205,3 +205,61 @@ h1 span {
     padding: 16px;
   }
 }
+
+@media (max-width: 640px) {
+  .marco {
+    padding: 12px;
+    gap: 16px;
+  }
+
+  .panel-info {
+    text-align: center;
+  }
+
+  .panel-info .etiqueta {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .panel-info .stats {
+    justify-items: center;
+  }
+
+  .panel-info .acciones {
+    justify-content: center;
+  }
+
+  .panel-info .mejor-marca {
+    text-align: center;
+  }
+
+  .panel-info,
+  .panel-tablero {
+    padding: 16px;
+    border-radius: 20px;
+  }
+
+  h1 {
+    font-size: 26px;
+  }
+
+  .stats {
+    gap: 8px;
+  }
+
+  .tablero {
+    padding: 6px;
+    gap: 6px;
+  }
+
+  .carta {
+    min-height: 70px;
+    padding: 4px;
+    border-radius: 12px;
+  }
+
+  .huella-img {
+    width: 28px;
+    height: 28px;
+  }
+}

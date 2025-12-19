@@ -840,6 +840,9 @@ body.modo-oscuro .modal-contenido {
     flex-direction: column;
     padding: 12px 6vw;
   }
+  .form-voluntariado input {
+    width: 270px;
+  }
 
   .menu.activo {
     display: flex;
@@ -869,5 +872,11 @@ body.modo-oscuro .modal-contenido {
   }
   .juego-wrapper iframe {
     min-height: 420px;
+  }
+  .form-contacto{
+    width: 300px;
+  }
+  .form-contacto input, .form-contacto textarea, .form-contacto select{
+    width: 270px;
   }
 }
