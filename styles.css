@@ -744,6 +744,25 @@ body.modo-oscuro .form-contacto textarea::placeholder {
   color: #c7ced9;
 }
 
+.pie-redes a {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin: 8px 0 6px;
+}
+
+.pie-redes picture {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pie-redes img {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+}
+
 .pie .boton-primario {
   margin-top: 10px;
   display: inline-block;
@@ -901,5 +920,10 @@ body.modo-oscuro .modal-contenido {
 
   .foto-equipo {
     max-width: 240px;
+  }
+
+  .pie-redes img {
+    width: 28px;
+    height: 28px;
   }
 }
